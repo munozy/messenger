@@ -17,9 +17,7 @@ public class Profile {
 	
 	private Date created;
 
-	public Profile() {
-
-	}
+	public Profile() {}
 
 	public Profile(long id, String profileName, String firstName, String lastName) {
 		this.id = id;

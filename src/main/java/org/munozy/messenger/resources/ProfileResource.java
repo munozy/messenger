@@ -22,22 +22,46 @@ public class ProfileResource {
 
 	ProfileService profileService = new ProfileService();
 
+	/**
+	 * GET http://localhost:8080/messenger/webapi/profiles
+	 * 
+	 * @return
+	 */
 	@GET
 	public List<Profile> getProfiles() {
 		return profileService.getAllProfiles();
 	}
 	
+	/**
+	 * GET http://localhost:8080/messenger/webapi/profiles/[profileName]
+	 * 
+	 * @param profileName
+	 * @return
+	 */
 	@GET
 	@Path("/{profileName}")
 	public Profile getProfile(@PathParam("profileName") String profileName) {
 		return profileService.getProfile(profileName);
 	}
 	
+	/**
+	 * POST http://localhost:8080/messenger/webapi/profiles
+	 * 
+	 * @param profile
+	 * @return
+	 */
 	@POST
 	public Profile addProfile(Profile profile) {
 		return profileService.addProfile(profile);
 	}
 	
+	/**
+	 * PUT http://localhost:8080/messenger/webapi/profiles/[profileName]
+	 * 
+	 * @param profileName
+	 * @param profile
+	 * @return
+	 */
 	@PUT
 	@Path("/{profileName}")
 	public Profile updateProfile(@PathParam("profileName") String profileName, Profile profile) {
@@ -45,6 +69,11 @@ public class ProfileResource {
 		return profileService.updateProfile(profile);
 	}
 	
+	/**
+	 * DELETE http://localhost:8080/messenger/webapi/profiles/[profileName]
+	 * 
+	 * @param profileName
+	 */
 	@DELETE
 	@Path("/{profileName}")
 	public void deleteProfile(@PathParam("profileName") String profileName) {

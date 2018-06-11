@@ -46,7 +46,7 @@ public class CommentResource {
 	}
 
 	/**
-	 * POST 	
+	 * POST http://localhost:8080/messenger/webapi/messages/[messageId]/comments	
 	 * 
 	 * @param messageId
 	 * @param comment

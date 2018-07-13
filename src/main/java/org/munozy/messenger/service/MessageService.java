@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.munozy.messenger.database.DatabaseClass;
+import org.munozy.messenger.database.exception.DataNotFoundException;
 import org.munozy.messenger.model.Message;
 
 public class MessageService {
@@ -48,7 +49,7 @@ public class MessageService {
 	public Message getMessage(long id) {
 		Message message = messages.get(id);
 		if (message == null) {
-			throw new RuntimeException("Message with id " + id + " not found");
+			throw new DataNotFoundException("Message with id " + id + " not found");
 		}
 		return message;
 	}
